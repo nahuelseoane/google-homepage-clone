@@ -70,38 +70,28 @@ header .icon {
     color: gray;
 }
 
-header .menu-profile img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-
 header .menu-profile {
-    width: 40px;
-    height: 40px;
+    --size: 40px;
+    --gap: 6px;
+    --ring: 4px;
+
     margin-right: 10px;
-    /* ring */
-    padding: 4px;
+    width: var(--size);
+    height: var(--size);
+    padding: var(--gap);
+    background: #fff;
     border-radius: 50%;
+    position: relative;
     display: inline-block;
-    background: conic-gradient(#4285F4 0 25%,
-            /* blue */
-            #34A853 0 50%,
-            /* green */
-            #FBBC05 0 75%,
-            /* yellow */
-            #EA4335 0 100%
-            /* red */
-        );
+
 }
 
-.menu-profile>img {
+header .menu-profile img {
     width: 100%;
     height: 100%;
     display: block;
     border-radius: 50%;
     object-fit: cover;
-    background: #fff;
 }
 
 .menu-profile::before {
@@ -110,16 +100,11 @@ header .menu-profile {
     inset: 0;
     padding: 4px;
     border-radius: 50%;
-    background: inherit;
-    -webkit-maks:
-        radial-gradient(farthest-side, transparent calc(100% - 4px), #000 0);
-    mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 0);
+    background: conic-gradient(#4285F4 0 25%, #34A853 0 50%, #FBBC05 0 75%, #EA4335 0 100%);
+    ;
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - var(--ring)), #000 0);
+    mask: radial-gradient(farthest-side, transparent calc(100% - var(--ring)), #000 0);
     animation: spin 6s linear infinite;
-}
-
-.menu-profile {
-    position: relative;
-    background: none;
 }
 
 /* use the ::before bg instead */
@@ -146,7 +131,7 @@ main {
     width: 100vw;
 }
 
-.google {
+.main-google {
     font-size: 10rem;
     display: flex;
 }
@@ -188,14 +173,14 @@ main {
     transition: border-color .15s ease, box-shadow .15s ease;
 }
 
-main .search-options {
+main .main-options {
     display: flex;
     justify-content: space-between;
     font-size: 1.5rem;
     gap: 1rem;
 }
 
-.search-options button {
+.main-options button {
     border-radius: 8px;
     padding: 12px 16px 12px 16px;
     outline: none;
