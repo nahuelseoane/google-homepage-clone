@@ -4,8 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css">
 
+    <!-- Fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Roboto:wght@400;500&display=swap">
+
+    <link rel="stylesheet" href="./css/main.css">
     <title>Google Clone</title>
 </head>
 
@@ -14,11 +18,19 @@
     <header>
         <nav class="menu" aria-label="Primary">
             <ul class="menu_list">
-                <li class="menu-gmail"><a href="#">Gmail</a></li>
-                <li class="menu-imagenes"><a href="#">Imágenes</a></li>
-                <li class="menu-icon">
+                <div class="menu-words">
+                    <li class="menu-gmail"><a href="#">Gmail</a></li>
+                    <li class="menu-images"><a href="#">Images</a></li>
+                </div>
+                <li class="menu-labs">
+                    <svg class="labs" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#1f1f1f">
+                        <path
+                            d="M200-120q-51 0-72.5-45.5T138-250l222-270v-240h-40q-17 0-28.5-11.5T280-800q0-17 11.5-28.5T320-840h320q17 0 28.5 11.5T680-800q0 17-11.5 28.5T640-760h-40v240l222 270q32 39 10.5 84.5T760-120H200Zm80-120h400L544-400H416L280-240Zm-80 40h560L520-492v-268h-80v268L200-200Zm280-280Z" />
+                    </svg>
+                </li>
+                <li class="menu-g-apps">
                     <a href="#">
-                        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <svg class="g-apps" viewBox="0 0 24 24" aria-hidden="true">
                             <g fill="currentColor">
                                 <rect x="3" y="3" width="4" height="4" rx="1.25" />
                                 <rect x="10" y="3" width="4" height="4" rx="1.25" />
@@ -47,27 +59,39 @@
 
     <!-- Main -->
     <main>
-        <section class="main-google">
-            <div id="google-blue">G</div>
-            <div id="google-red">o</div>
-            <div id="google-yellow">o</div>
-            <div id="google-blue">g</div>
-            <div id="google-green">l</div>
-            <div id="google-red">e</div>
+        <section class="main-google" aria-label="Google">
+            <div id="g-blue" class="g-upper">G</div>
+            <div id="g-red">o</div>
+            <div id="g-yellow">o</div>
+            <div id="g-blue">g</div>
+            <div id="g-green">l</div>
+            <div id="g-red">e</div>
         </section>
         <section class="main-input">
             <div class="main-input-container">
-                <span>🔎</span>
+                <span class="input-icon">
+                    <svg class="mag-glass" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M15.5 14h-.8l-.3-.3a6.5 6.5 0 10-.7.7l.3.3v.8l5 5 
+                                1.5-1.5-5-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z" />
+                    </svg>
+                </span>
                 <form role="search" action="/search" class="search">
                     <!-- <label for="site-search">Search</label> -->
-                    <input id="site-search" type="search" placeholder="Search...">
+                    <input id="site-search" type="search">
                 </form>
-                <a href="#">🎙️</a>
+                <span class="input-icon">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#1f1f1f">
+                            <path
+                                d="M480-400q-50 0-85-35t-35-85v-240q0-50 35-85t85-35q50 0 85 35t35 85v240q0 50-35 85t-85 35Zm0-240Zm-40 520v-123q-104-14-172-93t-68-184h80q0 83 58.5 141.5T480-320q83 0 141.5-58.5T680-520h80q0 105-68 184t-172 93v123h-80Zm40-360q17 0 28.5-11.5T520-520v-240q0-17-11.5-28.5T480-800q-17 0-28.5 11.5T440-760v240q0 17 11.5 28.5T480-480Z" />
+                        </svg>
+                    </a>
+                </span>
             </div>
         </section>
         <section class="main-options">
-            <button>Buscar con Google</button>
-            <button>Me siento con suerte</button>
+            <button>Google Search</button>
+            <button>I'm feeling lucky</button>
         </section>
     </main>
 
@@ -76,18 +100,17 @@
         <div class="footer-top">
             Argentina
         </div>
-        <br>
         <div class="footer-bottom">
             <div class="left">
-                <a href="#">Publicidad</a>
-                <a href="#">Negocios</a>
-                <a href="#">Sobre Google</a>
-                <a href="#">Cómo funciona la Búsqueda</a>
+                <a href="#">About</a>
+                <a href="#">Advertising</a>
+                <a href="#">Business</a>
+                <a href="#">How Search works</a>
             </div>
             <div class="right">
-                <a href="#">Privacidad</a>
-                <a href="#">Condiciones</a>
-                <a href="#">Preferencias</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Settings</a>
             </div>
         </div>
 
