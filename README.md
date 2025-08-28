@@ -1,0 +1,1 @@
+Frontend practice project: recreating Google’s homepage layout.
