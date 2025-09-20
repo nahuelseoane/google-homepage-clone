@@ -18,8 +18,8 @@ No original Google code or assets are used — all elements are custom-built usi
 ```
 /
 ├── index.html        # Main page
-├── styles.css        # Main styling
-├── icons/            # SVG or image assets (if any)
+├── css/main.css        # Main styling
+├── assets/            # SVG or image assets (if any)
 └── README.md
 ```
 
