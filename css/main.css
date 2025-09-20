@@ -1,6 +1,7 @@
 :root {
     --font-google: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-    --back-footer: #dadce0;
+    --back-footer: #f2f2f2;
+    --foot-border: #dadce0;
     --letter-c-footer: #1f1f1f;
     --radius: 8px;
     --links: #404040;
@@ -18,7 +19,6 @@ body {
 body {
     margin: 0;
     padding: 0;
-    /* overflow: hidden; */
     display: flex;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
@@ -30,7 +30,6 @@ a {
 
 header {
     padding: 6px;
-    height: 60px;
     font-size: 13px;
 }
 
@@ -39,7 +38,7 @@ header nav {
     justify-content: flex-end;
 }
 
-header nav .menu_list {
+header nav .menu-list {
     margin: 0px;
     padding: 0px;
     display: flex;
@@ -47,11 +46,12 @@ header nav .menu_list {
     justify-content: center;
     list-style: none;
     color: var(--links);
-    /* gap: 1rem; */
 }
 
 header .menu-words {
+    margin-right: 8px;
     display: flex;
+    justify-content: center;
 }
 
 header .menu-gmail:hover,
@@ -65,18 +65,19 @@ header .menu-gmail:hover,
 
 header .menu-g-apps,
 .menu-labs {
-    margin: 0;
     padding: 0;
     display: grid;
     place-items: center;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
+    inset: -4px;
 }
 
 header .menu-g-apps:hover,
 .menu-labs:hover {
-    background: #BDBDBD;
+    background: #dadce0;
+    background-size: 20px;
 }
 
 header .menu-g-apps>a {
@@ -98,8 +99,9 @@ header .g-apps,
 }
 
 header .menu-profile {
-    --size: 30px;
-    --gap: 1.5px;
+    margin: 10px;
+    --size: 35px;
+    --inset: 1.6px;
     --ring: 3px;
     width: var(--size);
     height: var(--size);
@@ -147,7 +149,7 @@ header .menu-profile img {
 .menu-profile::after {
     content: "";
     position: absolute;
-    inset: var(--gap);
+    inset: var(--inset);
     border-radius: 50%;
     background: #fff;
     z-index: 0;
@@ -160,7 +162,12 @@ header .menu-profile img {
 }
 
 header .menu-profile:hover {
+    box-shadow: inset 0 0 0 2px #BDBDBD;
+}
+
+.menu-profile:hover::after {
     background: #BDBDBD;
+    
 }
 
 main {
@@ -264,11 +271,10 @@ main .main-options {
     box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
 }
 
-
+/* footer */
 footer {
     color: var(--letter-c-footer);
     background: var(--back-footer);
-    padding: 0rem;
 }
 
 .footer-top {
@@ -277,23 +283,33 @@ footer {
 
 footer .footer-bottom {
     display: flex;
-    justify-content: space-around;
-    /* align-items: center; */
-    padding: 0px 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-top: 1px solid var(--foot-border);
 }
 
-/* .footer-bottom .left {
-    margin: 15px 15px;
-} */
+.footer-bottom .left-list,
+.footer-bottom .right-list {
+    padding:0;
+    display: flex;
+    list-style: none;
+}
 
 footer a {
     text-decoration: none;
+    padding: 15px;
     color: var(--letter-c-footer);
-    margin: 15px 15px;
 }
 
 footer a:hover {
     text-decoration: underline;
     color: #007bff;
-    /* highlight on hover */
+}
+
+@media (max-width: 1200px) {
+    footer .footer-bottom {
+        justify-content: space-evenly;
+    }
 }
